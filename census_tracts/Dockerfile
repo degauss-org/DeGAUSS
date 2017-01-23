@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libssh2-1-dev \
     libcurl4-openssl-dev \
     libxml2-dev \
+    libproj-dev libgdal-dev \
     software-properties-common python-software-properties \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -28,17 +29,8 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sour
 # set default CRAN repo and DL method
 RUN echo 'options(repos=c(CRAN = "https://cran.rstudio.com/"), download.file.method="libcurl")' >> /etc/R/Rprofile.site
 
-# install geo libraries
-RUN add-apt-repository -y ppa:ubuntugis/ppa         
-RUN apt-get update && apt-get install gdal-bin -y --force-yes \ 
-   && apt-get clean \                              
-   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-COPY . /
-
 RUN sudo su - -c "R -e \"install.packages('ghit')\"" 
 RUN sudo su - -c "R -e \"ghit::install_github('cole-brokamp/automagic')\""
 RUN sudo su - -c "R -e \"automagic::automagic()\""
 
 ENTRYPOINT ["/bin/bash", "-c", "./geocoded_locs_to_census_tracts.R $1"]
-
