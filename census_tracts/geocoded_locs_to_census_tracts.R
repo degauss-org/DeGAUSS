@@ -34,7 +34,7 @@ counties_needed <- unique(d$county)
 message(paste('\n(down)loading tract shapefiles for counties',paste(counties_needed,collapse=', ')))
 
 shps.tracts <- map(counties_needed,function(x) {
-  message(x)
+  message('\n',x,'\n')
   tigris::tracts(state=substr(x,1,2),county=substr(x,3,5)) %>% 
     spTransform(CRS('+init=epsg:5072'))
   }) %>% 
@@ -43,7 +43,7 @@ shps.tracts <- map(counties_needed,function(x) {
 message('\nfinding census tract for each point...')
 d$tract <- NA
 for (x in counties_needed) {
-  message('\n',x,'...\n')
+  message('\n',x,'...')
   d[d$county == x,'tract'] <- sp::over(d[d$county == x, ],shps.tracts[[x]])$GEOID
 }
 
@@ -52,4 +52,4 @@ out.file <- d %>% spTransform(CRS('+init=epsg:4326')) %>% as.data.frame
 out.file.name <- paste0(gsub('.csv','',args$file_name,fixed=TRUE),'_censustracts.csv')
 write.csv(out.file,out.file.name,row.names=F)
 
-message('FINISHED! output written to ',out.file.name)
+message('\nFINISHED! output written to ',out.file.name)
