@@ -1,4 +1,4 @@
-# docker run --name=censustract --rm=true --volume=$PWD:/tmp colebrokamp/... <geocoded-file-name>
+# docker run --rm=TRUE -v ${PWD}:/tmp colebrokamp/degauss:census_tracts <geocoded-file-name.csv>
 
 FROM ubuntu:14.04
 
@@ -31,6 +31,11 @@ RUN echo 'options(repos=c(CRAN = "https://cran.rstudio.com/"), download.file.met
 
 RUN sudo su - -c "R -e \"install.packages('ghit')\"" 
 RUN sudo su - -c "R -e \"ghit::install_github('cole-brokamp/automagic')\""
-RUN sudo su - -c "R -e \"automagic::automagic()\""
 
-ENTRYPOINT ["/bin/bash", "-c", "./geocoded_locs_to_census_tracts.R $1"]
+# run automagic from here
+RUN mkdir /temp
+COPY . /temp
+
+RUN sudo su - -c "R -e \"setwd('/temp'); automagic::automagic()\""
+
+ENTRYPOINT ["/temp/geocoded_locs_to_census_tracts.R"]
