@@ -9,6 +9,8 @@ Install Docker on your machine following the instructions here: [https://www.doc
 
 *Note: Docker is supported on most linux distributions, but requires Microsoft Windows 10 Professional or Enterprise 64-bit if you are using Windows and Apple macOS Yosemite 10.10.3 or or above if you are using Apple.  If you don't meet these operating system requirements, download and use [Docker Toolbox](https://www.docker.com/products/docker-toolbox) instead.*
 
+*Windows Note: If you receive the error message "docker computer does not have VT-X/AMD-v enabled, enabling it in BIOS is mandatory" when trying to startup the virtual box / Docker Quickstart Terminal, then you need to boot into your computer's BIOS settings and enable VT-X. If you are unsure how to boot into your BIOS settings try rebooting your computer and hold down F2 while it restarts.  It should look something like [this](https://goo.gl/images/rPbKVd) but will be different depending on the exact make and model of your computer.*
+
 ## Using Docker
 
 To test your installation, open a shell (using for example Terminal on Mac, or Git Bash on Windows).  If using Docker Toolbox, double click the Docker Quickstart Terminal to get started.
