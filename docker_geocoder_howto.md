@@ -41,7 +41,7 @@ Please see our [geocoding documentation](http://colebrokamp.com.s3-website-us-ea
 
 ### Geocoding
 
-In the shell, navigate to the directory where the CSV file to be geocoded is located. To avoid headaches don't use a remote or mounted directory like OneDrive or a shared research drive. Also, avoid spaces in the filename or address column name. When issuing the geocoding docker command make sure to include filename extensions even if they don't show up in your system file browser.
+At the command line, navigate to the directory where the CSV file to be geocoded is located. See [here](http://linuxcommand.org/lc3_lts0020.php) for help on navigating a filesystem using the command line. To avoid headaches don't use a remote or mounted directory like OneDrive or a shared research drive. Also, avoid spaces in the filename or address column name. When issuing the geocoding docker command make sure to include filename extensions even if they don't show up in your system file browser.
 
 Run: 
 
