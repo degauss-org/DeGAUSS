@@ -48,7 +48,7 @@ At the command line, navigate to the directory where the CSV file to be geocoded
 Run: 
 
 ```
-docker run --rm=TRUE -v=$PWD:/tmp colebrokamp/geocoder <name-of-file> <address-column-name>
+docker run --rm=TRUE -v "$PWD":/tmp colebrokamp/geocoder <name-of-file> <address-column-name>
 ```
 
 replacing `<name-of-file>` with the name of the CSV file to be geocoded and `<address-column-name>` with the name of the column in the CSV file that contains the address strings.  For example, 
@@ -57,7 +57,7 @@ replacing `<name-of-file>` with the name of the CSV file to be geocoded and `<ad
 docker run --rm=TRUE -v "$PWD":/tmp colebrokamp/geocoder my_address_file.csv addresses
 ```
 
-If on a Windows system, use file paths for windows instead of `$PWD`. For example, to use a file on your desktop the file paths for windows would be `/c/Users/<user-name>/desktop`.
+If on a Windows system, use file paths for windows instead of `$PWD`. For example, to use a file on your desktop the file paths for windows would be `/c/Users/<user-name>/desktop`. Make sure to use double quotes around the file path if it contains any spaces.
 
 If run successfully, the shell should show a progress bar while geocoding and the geocoded file will be written to the current working directory named similarly to the input file but with `_geocoded` appended to the file name.
 
