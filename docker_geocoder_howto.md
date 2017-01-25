@@ -54,7 +54,7 @@ docker run --rm=TRUE -v=$PWD:/tmp colebrokamp/geocoder <name-of-file> <address-c
 replacing `<name-of-file>` with the name of the CSV file to be geocoded and `<address-column-name>` with the name of the column in the CSV file that contains the address strings.  For example, 
 
 ```
-docker run --rm=TRUE -v=$PWD:/tmp colebrokamp/geocoder my_address_file.csv addresses
+docker run --rm=TRUE -v "$PWD":/tmp colebrokamp/geocoder my_address_file.csv addresses
 ```
 
 If on a Windows system, use file paths for windows instead of `$PWD`. For example, to use a file on your desktop the file paths for windows would be `/c/Users/<user-name>/desktop`.
@@ -68,7 +68,7 @@ The geomarker assessment images will only work with the output of the geocoding 
 Run:
 
 ```
-docker run --rm=TRUE -v=$PWD:tmp colebrokamp/degauss:census_tracts <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":tmp colebrokamp/degauss:census_tracts <name-of-geocoded-file>
 ```
 
 Docker will emit some messages as it progresses through the calculations and will again write the file to the working directory with a descriptive name appended.
@@ -76,5 +76,5 @@ Docker will emit some messages as it progresses through the calculations and wil
 To attach the distance (in meters) to the nearest major roadway, run:
 
 ```
-docker run --rm=TRUE -v=$PWD:tmp colebrokamp/degauss:dist_to_major_roadway <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":tmp colebrokamp/degauss:dist_to_major_roadway <name-of-geocoded-file>
 ```
