@@ -22,6 +22,13 @@ d <- read.csv(args$file_name,stringsAsFactors=FALSE)
 # d <- read.csv('test_addresses_geocoded.csv',stringsAsFactors=FALSE)
 # d <- read.csv('test_addresses_geocoded_disttomajorroadway.csv',stringsAsFactors=FALSE)
 
+d_cc <- complete.cases(d[ ,c('lat','lon')])
+
+if (! all(d_cc) {
+	message('WARNING: input files contains missing coordinates, these rows will be omitted from output.')
+        d <- d[d_cc, ]
+}
+
 coordinates(d) <- c('lon','lat')
 proj4string(d) <- CRS('+init=epsg:4326')
 d <- spTransform(d,CRS('+init=epsg:5072'))
