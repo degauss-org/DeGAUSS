@@ -16,9 +16,9 @@ Questions? Problems? [Email me](mailto:cole.brokamp@cchmc.org)
 
 Geocoding and geomarker assessment involves the use of identifying information (addresses) and therefore must be conducted in a HIPPA and IRB compliant manner. 
 
-This is an outstanding challenge for multi-site studies because current approaches include getting specific IRB approval for a central site to conduct all analyses, which is a length and sometime unfeasible process, or allowing each site to conduct their own analyses which requires expertise at each site and can result in non-reproducible and inconsistent geocoding and geomarker assessment results.
+This is an outstanding challenge for multi-site studies because current approaches include getting specific IRB approval for a central site to conduct all analyses, which is a lengthy and sometime unfeasible process, or allowing each site to conduct their own analyses which requires expertise at each site and can result in non-reproducible and inconsistent geocoding and geomarker assessment results.
 
-Our approach is a standalone, container-based application that can produce geocodes and derive community and environmental exposures. Usable on PC, Mac, or Linux machines, identifying information never leaves the local machine. Each study site independently geocodes their site's addresses and links exposures, strips any PHI and then sends de-identified and HIPPA compliant dataset out.
+Our approach is a standalone, container-based application that can produce geocodes and derive community and environmental exposures. Usable on PC, Mac, or Linux machines, identifying information never leaves the local machine. Each study site independently geocodes their own addresses and links exposures, strips any PHI, and then sends de-identified and HIPPA compliant dataset out.
 
 We have implemented this using Docker, a software containerization platform that wraps software into a complete filesystem containing everything needed to run: code, runtime, system tools, system libraries (shapefiles, databases, rasters, etc...). This guarantees the software will always run the same, regardless of its environment, which is a vital requirement for reproducible research in a multi-site study.
 
@@ -103,7 +103,7 @@ The geomarker assessment images will only work with the output of the geocoding 
 Run:
 
 ```
-docker run --rm=TRUE -v `$PWD`:tmp degauss/degauss:census_tracts <name-of-geocoded-file>
+docker run --rm=TRUE -v `$PWD`:/tmp degauss/degauss:census_tracts <name-of-geocoded-file>
 ```
 
 Docker will emit some messages as it progresses through the calculations and will again write the file to the working directory with a descriptive name appended (in this case the census tract of each geocoded location).
@@ -111,7 +111,7 @@ Docker will emit some messages as it progresses through the calculations and wil
 To attach the distance (in meters) to the nearest major roadway, run:
 
 ```
-docker run --rm=TRUE -v `$PWD`:tmp degauss/degauss:dist_to_major_roadway <name-of-geocoded-file>
+docker run --rm=TRUE -v `$PWD`:/tmp degauss/degauss:dist_to_major_roadway <name-of-geocoded-file>
 ```
 
-Please note that the geomarker assesment programs will not return rows that contained missing coordinate values.  A warning will be issued and the rows with missing coordinates will be removed before proceeding.
+Please note that the geomarker assesment programs will not return rows that contain missing coordinate values.  Missing coordinate values are possible if the geocoding container failed to assign them, for example, when using a malformed address string. A warning will be issued and the rows with missing coordinates will be removed before proceeding.
