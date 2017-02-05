@@ -4,7 +4,7 @@ MAINTAINER Cole Brokamp cole.brokamp@gmail.com
 
 ONBUILD RUN mkdir /temp
 ONBUILD COPY . /temp
-ONBUILD RUN sudo su - -c "R -e \"setwd('/temp'); automagic::automagic()\""
+ONBUILD RUN R -e "setwd('/temp'); automagic::automagic()"
 
 RUN useradd docker \
   && mkdir /home/docker \
