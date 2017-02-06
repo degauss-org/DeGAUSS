@@ -11,6 +11,7 @@ Questions? Problems? [Email me](mailto:cole.brokamp@cchmc.org)
 `degauss/geocoder_slim` | geocode given text string and return as JSON
 `degauss/degauss:census_tracts`  | attaches census tract FIPS ID
 `degauss/degauss:dist_to_major_roadway` | distance to TIGER/Line 2015 S1100 line in meters |
+`degauss/degauss:ACS_income` | Census tract median household income from 2015 5-year ACS |
 
 ## About
 
@@ -103,10 +104,10 @@ The geomarker assessment images will only work with the output of the geocoding 
 Run:
 
 ```
-docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:census_tracts <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:ACS_income <name-of-geocoded-file>
 ```
 
-Docker will emit some messages as it progresses through the calculations and will again write the file to the working directory with a descriptive name appended (in this case the census tract of each geocoded location).
+Docker will emit some messages as it progresses through the calculations and will again write the file to the working directory with a descriptive name appended (in this case the median household income from the 2015 American Community Survey based on the census tract of each location).
 
 To attach the distance (in meters) to the nearest major roadway, run:
 

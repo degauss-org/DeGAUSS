@@ -20,7 +20,6 @@ shp.counties <- tigris::counties() %>%
 message('\nloading and projecting input file...\n')
 d <- read.csv(args$file_name,stringsAsFactors=FALSE)
 # d <- read.csv('test_addresses_geocoded.csv',stringsAsFactors=FALSE)
-# d <- read.csv('test_addresses_geocoded_disttomajorroadway.csv',stringsAsFactors=FALSE)
 
 d_cc <- complete.cases(d[ ,c('lat','lon')])
 
@@ -56,7 +55,34 @@ for (x in counties_needed) {
 
 out.file <- d %>% spTransform(CRS('+init=epsg:4326')) %>% as.data.frame
 
-out.file.name <- paste0(gsub('.csv','',args$file_name,fixed=TRUE),'_censustracts.csv')
+
+message('\ndownloading Median household income in the past 12 months (in 2015 Inflation-adjusted dollars) from 2015 5-year American Community Survey\n')
+
+## get census info from 2015 ACS 5-year data API
+eMERGE_census_API_key <- '400ebfb0fc89448797851b6a3e31334a315f4168'
+
+get_ACS_data <- function(county_fips,variable='B19013_001E') {
+  the_call <- paste0('http://api.census.gov/data/2015/acs5?get=NAME,',
+                     variable,
+                     '&for=tract:*&',
+                     'in=state:',substr(county_fips,1,2),
+                     '&in=county:',substr(county_fips,3,5),
+                     '&key=',eMERGE_census_API_key)
+  the_results <- jsonlite::fromJSON(the_call) %>% 
+    data.frame(stringsAsFactors=FALSE)
+  names(the_results) <- the_results[1, ]
+  the_results <- the_results[-1, ]
+  return(the_results)
+}
+
+acs_data <- map_df(unique(d$county),get_ACS_data)
+acs_data$tract <- paste0(acs_data$state,acs_data$county,acs_data$tract)
+
+message('\nmerging into output file\n')
+
+out.file <- merge(out.file,acs_data[ ,c('B19013_001E','tract')],by='tract',all.x=TRUE,all.y=FALSE)
+  
+out.file.name <- paste0(gsub('.csv','',args$file_name,fixed=TRUE),'medianhouseholdincome_.csv')
 write.csv(out.file,out.file.name,row.names=F)
 
 message('\nFINISHED! output written to ',out.file.name)
