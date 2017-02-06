@@ -80,7 +80,7 @@ For those unfamiliar with the command line, the simplest approach might be to pu
 Run: 
 
 ```
-docker run --rm=TRUE -v `$PWD`:/tmp colebrokamp/geocoder <name-of-file> <address-column-name>
+docker run --rm=TRUE -v "$PWD":/tmp colebrokamp/geocoder <name-of-file> <address-column-name>
 ```
 
 replacing `<name-of-file>` with the name of the CSV file to be geocoded and `<address-column-name>` with the name of the column in the CSV file that contains the address strings.  
@@ -88,7 +88,7 @@ replacing `<name-of-file>` with the name of the CSV file to be geocoded and `<ad
 For example, 
 
 ```
-docker run --rm=TRUE -v `$PWD`:/tmp degauss/geocoder my_address_file.csv addresses
+docker run --rm=TRUE -v "$PWD":/tmp degauss/geocoder my_address_file.csv addresses
 ```
 To avoid headaches don't use a file with spaces in the filename or address column name. When issuing the geocoding docker command make sure to include the `.csv` filename extension even if they don't show up in your system file browser. 
 
@@ -103,7 +103,7 @@ The geomarker assessment images will only work with the output of the geocoding 
 Run:
 
 ```
-docker run --rm=TRUE -v `$PWD`:/tmp degauss/degauss:census_tracts <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:census_tracts <name-of-geocoded-file>
 ```
 
 Docker will emit some messages as it progresses through the calculations and will again write the file to the working directory with a descriptive name appended (in this case the census tract of each geocoded location).
@@ -111,7 +111,7 @@ Docker will emit some messages as it progresses through the calculations and wil
 To attach the distance (in meters) to the nearest major roadway, run:
 
 ```
-docker run --rm=TRUE -v `$PWD`:/tmp degauss/degauss:dist_to_major_roadway <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:dist_to_major_roadway <name-of-geocoded-file>
 ```
 
 Please note that the geomarker assesment programs will not return rows that contain missing coordinate values.  Missing coordinate values are possible if the geocoding container failed to assign them, for example, when using a malformed address string. A warning will be issued and the rows with missing coordinates will be removed before proceeding.
