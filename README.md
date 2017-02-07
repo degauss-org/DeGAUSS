@@ -38,7 +38,7 @@ If using Windows or macOS, download and install [Docker Toolbox](https://www.doc
 #### Troubleshooting Common Installation Problems
 
 - If you are trying to install on Windows and receive the error message `docker computer does not have VT-X/AMD-v enabled, enabling it in BIOS is mandatory` when trying to startup the virtual box / Docker Quickstart Terminal, then you need to boot into your computer's BIOS settings and enable VT-X. If you are unsure how to boot into your BIOS settings try rebooting your computer and hold down F2 while it restarts.  It should look something like [this](https://goo.gl/images/rPbKVd) but will be different depending on the exact make and model of your computer.
-- Do not attempt to use Docker Toolbox when connected to a virtual network (i.e. remoting in to a work maching from home) or when using a proxy.  Docker Toolbox works by communicating with a virtual machine and these settings will cause problems.
+- Do not attempt to use Docker Toolbox when connected to a virtual network (i.e. remoting in to a work machine from home) or when using a proxy.  Docker Toolbox works by communicating with a virtual machine and these settings will cause problems.
 
 ## Using Docker
 
