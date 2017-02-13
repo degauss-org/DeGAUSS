@@ -81,7 +81,7 @@ For those unfamiliar with the command line, the simplest approach might be to pu
 Run: 
 
 ```
-docker run --rm=TRUE -v "$PWD":/tmp colebrokamp/geocoder <name-of-file> <address-column-name>
+docker run --rm=TRUE -v "$PWD":/tmp degauss/geocoder <name-of-file> <address-column-name>
 ```
 
 replacing `<name-of-file>` with the name of the CSV file to be geocoded and `<address-column-name>` with the name of the column in the CSV file that contains the address strings.  
