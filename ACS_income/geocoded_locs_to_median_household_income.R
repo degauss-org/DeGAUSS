@@ -82,7 +82,7 @@ message('\nmerging into output file\n')
 
 out.file <- merge(out.file,acs_data[ ,c('B19013_001E','tract')],by='tract',all.x=TRUE,all.y=FALSE)
   
-out.file.name <- paste0(gsub('.csv','',args$file_name,fixed=TRUE),'medianhouseholdincome_.csv')
+out.file.name <- paste0(gsub('.csv','',args$file_name,fixed=TRUE),'_medianhouseholdincome.csv')
 write.csv(out.file,out.file.name,row.names=F)
 
 message('\nFINISHED! output written to ',out.file.name)
