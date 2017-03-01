@@ -1,17 +1,19 @@
 # DeGAUSS
 
+[![DOI](https://zenodo.org/badge/79760093.svg)](https://zenodo.org/badge/latestdoi/79760093)
+
 **De**centralized **G**eomarker **A**ssessment for M**u**lti **S**ite **S**tudies  
 Questions? Problems? [Email me](mailto:cole.brokamp@cchmc.org)
 
 ## Currently Available Images
 
-**image**          |              **description**
-|---------------:|:-----------------------------------------|
-`degauss/geocoder` | batch geocoding 
-`degauss/geocoder_slim` | geocode given text string and return as JSON
-`degauss/degauss:census_tracts`  | attaches census tract FIPS ID
-`degauss/degauss:dist_to_major_roadway` | distance to TIGER/Line 2015 S1100 line in meters |
-`degauss/degauss:ACS_income` | Census tract median household income from 2015 5-year ACS |
+**image**          |              **description**            | **size** | **link**
+|:---------------|:-----------------------------------------|:-----:|:-----:|
+`degauss/geocoder` | batch geocoding | [![](https://images.microbadger.com/badges/image/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own version badge on microbadger.com") |
+`degauss/geocoder_slim` | return geocoded text string as JSON | [![](https://images.microbadger.com/badges/image/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own version badge on microbadger.com") |
+`degauss/census_tracts`  | census tract FIPS ID | [![](https://images.microbadger.com/badges/image/degauss/census_tracts.svg)](https://microbadger.com/images/degauss/census_tracts "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/census_tracts.svg)](https://microbadger.com/images/degauss/census_tracts "Get your own version badge on microbadger.com") |
+`degauss/dist_to_major_roadway` | distance to TIGER/Line 2015 S1100 line in meters | [![](https://images.microbadger.com/badges/image/degauss/dist_to_major_roadway.svg)](https://microbadger.com/images/degauss/dist_to_major_roadway "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/dist_to_major_roadway.svg)](https://microbadger.com/images/degauss/dist_to_major_roadway "Get your own version badge on microbadger.com") |
+`degauss/acs_income` | census tract median household income from 2015 5-year ACS | [![](https://images.microbadger.com/badges/image/degauss/acs_income.svg)](https://microbadger.com/images/degauss/acs_income "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/acs_income.svg)](https://microbadger.com/images/degauss/acs_income "Get your own version badge on microbadger.com") |
 
 ## About
 
@@ -116,3 +118,7 @@ docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:dist_to_major_roadway <name-
 ```
 
 Please note that the geomarker assesment programs will not return rows that contain missing coordinate values.  Missing coordinate values are possible if the geocoding container failed to assign them, for example, when using a malformed address string. A warning will be issued and the rows with missing coordinates will be removed before proceeding.
+
+## Citation
+
+If you use this software in a publication, please cite using the DOI or example citations available at [http://doi.org/10.5281/zenodo.344490](http://doi.org/10.5281/zenodo.344490).
