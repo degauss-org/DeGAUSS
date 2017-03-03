@@ -50,15 +50,6 @@ Run `docker run hello-world` and you should see some output describing what Dock
 
 Notice that after asking Docker to run a container, if it does not find the image locally, it downloads it from an online repository. This is only necessary the first time you run a container from each image.  Once downloaded, Docker will continue to use the same local image to create containers. 
 
-## Get Access to Private Image Repositories
-
-You must have access to the private image repositories to pull and use them.  To gain access:
-
-- Make an account at http://hub.docker.com
-- Run `docker login` at the shell and type in your username and password
-- Email your username to [Cole Brokamp](mailto:cole.brokamp@cchmc.org) in order to gain access to the private image repositories
-
-
 ## Gecoding with DeGAUSS
 
 ### Input File
