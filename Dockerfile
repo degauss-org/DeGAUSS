@@ -30,5 +30,4 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sour
 RUN echo 'options(repos=c(CRAN = "https://cran.rstudio.com/"), download.file.method="libcurl")' >> /etc/R/Rprofile.site
 
 # install automagic package to install package dependencies
-RUN R -e "install.packages('devtools')"
-RUN R -e "devtools::install_github('cole-brokamp/automagic')"
+RUN R -e "install.packages('automagic')"
