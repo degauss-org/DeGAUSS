@@ -12,8 +12,15 @@ suppressPackageStartupMessages(library(rgdal))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(purrr))
 
+# create memoised version of functions using local persistent cache
+suppressPackageStartupMessages(library(memoise)) # note: requires gh version of this package
+
+lc <- cache_filesystem('/tmp/degauss_cache')
+primary_roads <- memoise(tigris::primary_roads,cache=lc)
+gDistance <- memoise(rgeos::gDistance,cache=lc)
+
 message('\n(down)loading major roadway shapefile...\n')
-shp.roads <- tigris::primary_roads() %>% 
+shp.roads <- primary_roads() %>% 
   spTransform(CRS('+init=epsg:5072'))
 
 message('\nloading and projecting input file...\n')
@@ -33,7 +40,7 @@ d <- spTransform(d,CRS('+init=epsg:5072'))
 
 message('\nfinding distance to major roadway (in meters) for each point...\n')
 
-dists <- rgeos::gDistance(d,shp.roads,byid=c(TRUE,FALSE))
+dists <- gDistance(d,shp.roads,byid=c(TRUE,FALSE))
 
 d@data$dist_to_major_road <- dists %>% as.vector
 

@@ -110,6 +110,12 @@ docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:dist_to_major_roadway <name-
 
 Please note that the geomarker assesment programs will not return rows that contain missing coordinate values.  Missing coordinate values are possible if the geocoding container failed to assign them, for example, when using a malformed address string. A warning will be issued and the rows with missing coordinates will be removed before proceeding.
 
+## Memoisation
+
+The underlying R code in the Docker images uses the `memoise` package to cache certain function calls to a folder in the working directory called `degauss_cache`. This can be safely deleted after running any container, but if kept and the docker image is called again from the directory containing the cache directory, it will use the cached results rather than redownloading shapefiles or geocoding again.  This can be especially useful when one of many counties fails to download and the entire container process fails.  In this case, running the command again will not require redownloading/recomputation of items that have previously been completed.
+
+Because of the support for multithreaded geocoding using the `CB::cb_apply` function, the cache folder for geocoding is called `cache` instead of `degauss_cache`.
+
 ## Citation
 
 If you use this software in a publication, please cite using the DOI or example citations available at [http://doi.org/10.5281/zenodo.344490](http://doi.org/10.5281/zenodo.344490).

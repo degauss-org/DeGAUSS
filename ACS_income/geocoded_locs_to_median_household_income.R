@@ -12,9 +12,16 @@ suppressPackageStartupMessages(library(rgdal))
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(purrr))
 
-# this will be in the docker image so it won't redownloaded everytime
+# create memoised version of functions using local persistent cache
+suppressPackageStartupMessages(library(memoise)) # note: requires gh version of this package
+
+lc <- cache_filesystem('/tmp/degauss_cache')
+counties <- memoise(tigris::counties,cache=lc)
+tracts  <- memoise(tigris::tracts,cache=lc)
+over <- memoise(sp::over,cache=lc)
+
 message('\n(down)loading all county shapefiles...\n')
-shp.counties <- tigris::counties() %>% 
+shp.counties <- counties() %>% 
   spTransform(CRS('+init=epsg:5072'))
 
 message('\nloading and projecting input file...\n')
@@ -34,14 +41,14 @@ d <- spTransform(d,CRS('+init=epsg:5072'))
 
 
 message('\nfinding necessary counties...\n')
-d$county <- sp::over(d,shp.counties)$GEOID
+d$county <- over(d,shp.counties)$GEOID
 counties_needed <- unique(d$county)
 
 message(paste('\n(down)loading tract shapefiles for counties',paste(counties_needed,collapse=', ')))
 
 shps.tracts <- map(counties_needed,function(x) {
   message('\n',x,'\n')
-  tigris::tracts(state=substr(x,1,2),county=substr(x,3,5)) %>% 
+  tracts(state=substr(x,1,2),county=substr(x,3,5)) %>% 
     spTransform(CRS('+init=epsg:5072'))
   }) %>% 
   set_names(counties_needed)
@@ -50,7 +57,7 @@ message('\nfinding census tract for each point...')
 d$tract <- NA
 for (x in counties_needed) {
   message('\n',x,'...')
-  d[d$county == x,'tract'] <- sp::over(d[d$county == x, ],shps.tracts[[x]])$GEOID
+  d[d$county == x,'tract'] <- over(d[d$county == x, ],shps.tracts[[x]])$GEOID
 }
 
 out.file <- d %>% spTransform(CRS('+init=epsg:4326')) %>% as.data.frame
@@ -74,6 +81,7 @@ get_ACS_data <- function(county_fips,variable='B19013_001E') {
   the_results <- the_results[-1, ]
   return(the_results)
 }
+get_ACS_data <- memoise(get_ACS_data,cache=lc)
 
 acs_data <- map_df(unique(d$county),get_ACS_data)
 acs_data$tract <- paste0(acs_data$state,acs_data$county,acs_data$tract)
