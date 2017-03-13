@@ -5,15 +5,16 @@
 **De**centralized **G**eomarker **A**ssessment for M**u**lti **S**ite **S**tudies  
 Questions? Problems? [Email me](mailto:cole.brokamp@cchmc.org)
 
+
 ## Currently Available Images
 
 **image**          |              **description**            | **size** | **link**
 |:---------------|:-----------------------------------------|:-----:|:-----:|
-`degauss/geocoder` | batch geocoding | [![](https://images.microbadger.com/badges/image/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own version badge on microbadger.com") |
-`degauss/geocoder_slim` | return geocoded text string as JSON | [![](https://images.microbadger.com/badges/image/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder "Get your own version badge on microbadger.com") |
-`degauss/census_tracts`  | census tract FIPS ID | [![](https://images.microbadger.com/badges/image/degauss/census_tracts.svg)](https://microbadger.com/images/degauss/census_tracts "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/census_tracts.svg)](https://microbadger.com/images/degauss/census_tracts "Get your own version badge on microbadger.com") |
-`degauss/dist_to_major_roadway` | distance to TIGER/Line 2015 S1100 line in meters | [![](https://images.microbadger.com/badges/image/degauss/dist_to_major_roadway.svg)](https://microbadger.com/images/degauss/dist_to_major_roadway "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/dist_to_major_roadway.svg)](https://microbadger.com/images/degauss/dist_to_major_roadway "Get your own version badge on microbadger.com") |
-`degauss/acs_income` | census tract median household income from 2015 5-year ACS | [![](https://images.microbadger.com/badges/image/degauss/acs_income.svg)](https://microbadger.com/images/degauss/acs_income "Get your own image badge on microbadger.com") | [![](https://images.microbadger.com/badges/version/degauss/acs_income.svg)](https://microbadger.com/images/degauss/acs_income "Get your own version badge on microbadger.com") |
+`degauss/geocoder` | batch geocoding | [![](https://images.microbadger.com/badges/image/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder) | [![](https://images.microbadger.com/badges/version/degauss/geocoder.svg)](https://hub.docker.com/r/degauss/geocoder/) |
+`degauss/geocoder_slim` | return geocoded text string as JSON | [![](https://images.microbadger.com/badges/image/degauss/geocoder.svg)](https://microbadger.com/images/degauss/geocoder) | [![](https://images.microbadger.com/badges/version/degauss/geocoder.svg)](https://hub.docker.com/r/degauss/geocoder_slim/) |
+`degauss/census_tracts`  | census tract FIPS ID | [![](https://images.microbadger.com/badges/image/degauss/census_tracts.svg)](https://microbadger.com/images/degauss/census_tracts) | [![](https://images.microbadger.com/badges/version/degauss/census_tracts.svg)](https://hub.docker.com/r/degauss/census_tracts/) |
+`degauss/dist_to_major_roadway` | distance to TIGER/Line 2015 S1100 line in meters | [![](https://images.microbadger.com/badges/image/degauss/dist_to_major_roadway.svg)](https://microbadger.com/images/degauss/dist_to_major_roadway) | [![](https://images.microbadger.com/badges/version/degauss/dist_to_major_roadway.svg)](https://hub.docker.com/r/degauss/dist_to_major_roadway/) |
+`degauss/acs_income` | census tract median household income from 2015 5-year ACS | [![](https://images.microbadger.com/badges/image/degauss/acs_income.svg)](https://microbadger.com/images/degauss/acs_income) | [![](https://images.microbadger.com/badges/version/degauss/acs_income.svg)](https://hub.docker.com/r/degauss/acs_income/) |
 
 ## About
 
