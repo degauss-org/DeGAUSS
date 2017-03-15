@@ -43,6 +43,7 @@ d <- spTransform(d,CRS('+init=epsg:5072'))
 message('\nfinding necessary counties...\n')
 d$county <- over(d,shp.counties)$GEOID
 counties_needed <- unique(d$county)
+counties_needed  <- na.omit(counties_needed)
 
 message(paste('\n(down)loading tract shapefiles for counties',paste(counties_needed,collapse=', ')))
 
