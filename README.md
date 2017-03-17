@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/79760093.svg)](https://zenodo.org/badge/latestdoi/79760093)
 
-**De**centralized **G**eomarker **A**ssessment for M**u**lti **S**ite **S**tudies  
+**De**centralized **G**eomarker **A**ssessment for M**u**lti-**S**ite **S**tudies  
 Questions? Problems? [Email me](mailto:cole.brokamp@cchmc.org)
 
 

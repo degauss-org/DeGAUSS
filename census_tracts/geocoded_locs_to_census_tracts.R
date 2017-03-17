@@ -54,6 +54,13 @@ shps.tracts <- map(counties_needed,function(x) {
   }) %>% 
   set_names(counties_needed)
 
+d_c_tract <- complete.cases(as.data.frame(d[ ,'county']))
+
+if (! all(d_c_tract)) {
+  message('WARNING: some coordinates were not able to be assigned to a county, these rows will be omitted from output.')
+  d <- d[d_c_tract, ]
+}
+
 message('\nfinding census tract for each point...')
 d$tract <- NA
 for (x in counties_needed) {
