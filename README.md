@@ -1,9 +1,11 @@
 # DeGAUSS
 
 [![DOI](https://zenodo.org/badge/79760093.svg)](https://zenodo.org/badge/latestdoi/79760093)
+ [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
 **De**centralized **G**eomarker **A**ssessment for M**u**lti-**S**ite **S**tudies  
-Questions? Problems? [Email me](mailto:cole.brokamp@cchmc.org)
+
+Questions? Problems? Please [file an issue](https://github.com/cole-brokamp/DeGAUSS/issues/new) on GitHub.
 
 
 ## Currently Available Images
