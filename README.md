@@ -100,7 +100,7 @@ The geomarker assessment images will only work with the output of the geocoding 
 Run:
 
 ```
-docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:ACS_income <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":/tmp degauss/acs_income <name-of-geocoded-file>
 ```
 
 Docker will emit some messages as it progresses through the calculations and will again write the file to the working directory with a descriptive name appended (in this case the median household income from the 2015 American Community Survey based on the census tract of each location).
@@ -108,7 +108,7 @@ Docker will emit some messages as it progresses through the calculations and wil
 To attach the distance (in meters) to the nearest major roadway, run:
 
 ```
-docker run --rm=TRUE -v "$PWD":/tmp degauss/degauss:dist_to_major_roadway <name-of-geocoded-file>
+docker run --rm=TRUE -v "$PWD":/tmp degauss/dist_to_major_roadway <name-of-geocoded-file>
 ```
 
 Please note that the geomarker assesment programs will not return rows that contain missing coordinate values.  Missing coordinate values are possible if the geocoding container failed to assign them, for example, when using a malformed address string. A warning will be issued and the rows with missing coordinates will be removed before proceeding.
