@@ -29,5 +29,6 @@ RUN echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sour
 # set default CRAN repo and DL method
 RUN echo 'options(repos=c(CRAN = "https://cran.rstudio.com/"), download.file.method="libcurl")' >> /etc/R/Rprofile.site
 
-# install automagic package to install package dependencies
-RUN R -e "install.packages('automagic')"
+# install devel version of automagic package to install package dependencies
+RUN R -e "install.packages('remotes')"
+RUN R -e "remotes::install_github('cole-brokamp/automagic')"
