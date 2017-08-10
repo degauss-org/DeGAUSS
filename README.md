@@ -66,7 +66,7 @@ An example input CSV file might look like:
     002,660 Lincoln Avenue Cincinnati OH 45229
     003,2800 Winslow Avenue Cincinnati OH 45206
 
-Please see our [geocoding documentation](http://colebrokamp.com.s3-website-us-east-1.amazonaws.com/posts_geocoding_tips.html) for more information on the geocoding process, how to interpret the output, and tips for getting the best results.
+Please see our [geocoding documentation](http://colebrokamp.com/posts_geocoding_tips.html) for more information on the geocoding process, how to interpret the output, and tips for getting the best results.
 
 ### Geocoding
 
