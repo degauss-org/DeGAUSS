@@ -7,6 +7,12 @@
 
 Questions? Problems? Please [file an issue](https://github.com/cole-brokamp/DeGAUSS/issues/new) on GitHub.
 
+## Citation
+
+Geocoding accuracy as compared to other geocoding platforms and a description of a proof of concept application is available in our peer-reviewed publication:
+
+Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Assocation*. In Press. 
+
 
 ## Currently Available Images
 
@@ -115,10 +121,4 @@ Please note that the geomarker assesment programs will not return rows that cont
 
 ## Memoisation
 
-The underlying R code in the Docker images uses the `memoise` package to cache certain function calls to a folder in the working directory called `degauss_cache`. This can be safely deleted after running any container, but if kept and the docker image is called again from the directory containing the cache directory, it will use the cached results rather than redownloading shapefiles or geocoding again.  This can be especially useful when one of many counties fails to download and the entire container process fails.  In this case, running the command again will not require redownloading/recomputation of items that have previously been completed.
-
-Because of the support for multithreaded geocoding using the `CB::cb_apply` function, the cache folder for geocoding is called `cache` instead of `degauss_cache`.
-
-## Citation
-
-If you use this software in a publication, please cite using the DOI or example citations available at [http://doi.org/10.5281/zenodo.344490](http://doi.org/10.5281/zenodo.344490).
+The underlying R code in the Docker images uses the `memoise` package to cache certain function calls to a folder in the working directory called `degauss_cache`. This can be safely deleted after running any container, but if kept and the docker image is called again from the directory containing the cache directory, it will use the cached results rather than redownloading shapefiles or geocoding again.  This can be especially useful when one of many counties fails to download and the entire container process fails.  In this case, running the command again will not require redownloading/recomputation of items that have previously been completed. Because of the support for multithreaded geocoding using the `CB::cb_apply` function, the cache folder for geocoding is called `cache` instead of `degauss_cache`.
