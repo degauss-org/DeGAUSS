@@ -9,9 +9,9 @@ Questions? Problems? Please [file an issue](https://github.com/cole-brokamp/DeGA
 
 ## Citation
 
-Geocoding accuracy as compared to other geocoding platforms and a description of a proof of concept application is available in our peer-reviewed publication:
+If you use this software in a scientific publication, please cite the following peer-reviewed manuscript:
 
-Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Assocation*. In Press. 
+Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Association*. In Press. 
 
 
 ## Currently Available Images
@@ -72,7 +72,7 @@ An example input CSV file might look like:
     002,660 Lincoln Avenue Cincinnati OH 45229
     003,2800 Winslow Avenue Cincinnati OH 45206
 
-Please see our [geocoding documentation](http://colebrokamp.com/posts_geocoding_tips.html) for more information on the geocoding process, how to interpret the output, and tips for getting the best results.
+Please see our [geocoding documentation](http://colebrokamp.com/posts/geocoding_tips.html) for more information on the geocoding process, how to interpret the output, and tips for getting the best results.
 
 ### Geocoding
 
