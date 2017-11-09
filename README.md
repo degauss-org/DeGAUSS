@@ -11,8 +11,7 @@ Questions? Problems? Please [file an issue](https://github.com/cole-brokamp/DeGA
 
 If you use this software in a scientific publication, please cite the following peer-reviewed manuscript:
 
-Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Association*. In Press. 
-
+Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Assocation*. 0(0). 1-6. 2017. [*Download*](https://colebrokamp-website.s3.amazonaws.com/publications/Brokamp_JAMIA_2017.pdf).
 
 ## Currently Available Images
 
