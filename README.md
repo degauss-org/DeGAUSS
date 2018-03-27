@@ -5,13 +5,13 @@
 
 **De**centralized **G**eomarker **A**ssessment for M**u**lti-**S**ite **S**tudies  
 
-Questions? Problems? Please [file an issue](https://github.com/cole-brokamp/DeGAUSS/issues/new) on GitHub.
+Questions? Problems? Please [file an issue](https://github.com/cole-brokamp/DeGAUSS/issues/new) on GitHub or [read the wiki](https://github.com/cole-brokamp/DeGAUSS/wiki) for troubleshooting tips, address formatting best practices, and help with interpreting geocoding results.
 
 ## Citation
 
 If you use this software in a scientific publication, please cite the following peer-reviewed manuscript:
 
-Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Assocation*. 2017. [*Download*](https://colebrokamp-website.s3.amazonaws.com/publications/Brokamp_JAMIA_2017.pdf).
+Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralized and Reproducible Geocoding and Characterization of Community and Environmental Exposures for Multi-Site Studies. *Journal of American Medical Informatics Association*. 25(3). 309-314. 2018. [*Download*](https://colebrokamp-website.s3.amazonaws.com/publications/Brokamp_JAMIA_2017.pdf).
 
 ## Currently Available Images
 
@@ -25,11 +25,11 @@ Cole Brokamp, Chris Wolfe, Todd Lingren, John Harley, Patrick Ryan. Decentralize
 
 ## About
 
-Geocoding and geomarker assessment involves the use of identifying information (addresses) and therefore must be conducted in a HIPPA and IRB compliant manner. 
+Geocoding and geomarker assessment involves the use of identifying information (addresses) and therefore must be conducted in a HIPAA and IRB compliant manner. 
 
 This is an outstanding challenge for multi-site studies because current approaches include getting specific IRB approval for a central site to conduct all analyses, which is a lengthy and sometime unfeasible process, or allowing each site to conduct their own analyses which requires expertise at each site and can result in non-reproducible and inconsistent geocoding and geomarker assessment results.
 
-Our approach is a standalone, container-based application that can produce geocodes and derive community and environmental exposures. Usable on PC, Mac, or Linux machines, identifying information never leaves the local machine. Each study site independently geocodes their own addresses and links exposures, strips any PHI, and then sends de-identified and HIPPA compliant dataset out.
+Our approach is a standalone, container-based application that can produce geocodes and derive community and environmental exposures. Usable on PC, Mac, or Linux machines, identifying information never leaves the local machine. Each study site independently geocodes their own addresses and links exposures, strips any PHI, and then sends de-identified and HIPAA compliant dataset out.
 
 We have implemented this using Docker, a software containerization platform that wraps software into a complete filesystem containing everything needed to run: code, runtime, system tools, system libraries (shapefiles, databases, rasters, etc...). This guarantees the software will always run the same, regardless of its environment, which is a vital requirement for reproducible research in a multi-site study.
 
