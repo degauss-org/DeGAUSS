@@ -1,0 +1,4 @@
+"address","id","street","zip","city","state","lat","lon","score","prenum","number","precision"
+"2800 Winslow Avenue Cincinnati OH 45206","003","Winslow Ave","45206","Cincinnati","OH",39.130586,-84.49631,0.941,"","2800","range"
+"3333 Burnet Ave Cincinnati OH 45229","001","Burnet Ave","45229","Cincinnati","OH",39.14089,-84.500402,0.949,"","3333","range"
+"660 Lincoln Avenue Cincinnati OH 45229","002","Lincoln Ave","45206",NA,NA,39.13282,-84.494724,0.805,"","660","range"
