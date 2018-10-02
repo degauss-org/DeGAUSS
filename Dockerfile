@@ -11,12 +11,21 @@ RUN useradd docker \
   && chown docker:docker /home/docker \
   && addgroup docker staff
 
+RUN apt-get update && apt-get install -y software-properties-common \
+        && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     libssh2-1-dev \
     libcurl4-openssl-dev \
     libxml2-dev \
-    libproj-dev libgdal-dev \
+    libproj-dev \
+    libgeos-dev \
+    libgdal-dev \
+    liblwgeom-dev \
+    libudunits2-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
