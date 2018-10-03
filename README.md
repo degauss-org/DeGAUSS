@@ -158,4 +158,4 @@ The underlying R code in the Docker images uses the `memoise` package to cache c
 
 ## Contributing
 
-Please see `CONTRIBUTING.md` for guidelines on how to contribute to the development of `DeGAUSS`. We welcome additions to our wiki, where we collect common problems and their solutions as well as provide troubleshooting advice. We also welcome new containers using the DeGAUSS framework.  Pull requests are always welcome but early visibility is highly encouraged; we often create containers that are not yet publicly available and would love to still collaborate.
+Please see `CONTRIBUTING.md` for guidelines on how to contribute to the development of `DeGAUSS`. We welcome additions to our wiki, where we collect common problems and their solutions as well as provide troubleshooting advice. We also welcome new containers using the DeGAUSS framework.  Pull requests are always welcome but early visibility is highly encouraged; we often create containers that are not yet publicly available and would love to still collaborate. Automated tests for containers are conducted through Travis, see `.travis.yml` for details.
