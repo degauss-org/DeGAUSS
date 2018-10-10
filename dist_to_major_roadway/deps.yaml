@@ -3,21 +3,21 @@
   Version: '0.4'
 - Package: tigris
   Repository: CRAN
-  Version: 0.3.3
+  Version: '0.7'
 - Package: rgdal
   Repository: CRAN
-  Version: 1.2-5
+  Version: 1.3-4
 - Package: dplyr
   Repository: CRAN
-  Version: 0.5.0
+  Version: 0.7.6
 - Package: purrr
   Repository: CRAN
-  Version: 0.2.2
+  Version: 0.2.5
 - Package: memoise
   GithubUsername: hadley
   GithubRepo: memoise
   GithubRef: master
-  GithubSHA1: 884d56558e08699770ad1ab1dadb11e194066902
+  GithubSHA1: 06d16ec150a6be3bcb4322e08056ee131b013b37
 - Package: rgeos
   Repository: CRAN
   Version: 0.3-22
