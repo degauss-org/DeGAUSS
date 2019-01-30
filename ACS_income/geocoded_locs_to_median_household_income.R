@@ -69,7 +69,7 @@ message('\ndownloading Median household income in the past 12 months (in 2015 In
 eMERGE_census_API_key <- '400ebfb0fc89448797851b6a3e31334a315f4168'
 
 get_ACS_data <- function(county_fips,variable='B19013_001E') {
-  the_call <- paste0('http://api.census.gov/data/2015/acs5?get=NAME,',
+  the_call <- paste0('http://api.census.gov/data/2015/acs/acs5?get=NAME,',
                      variable,
                      '&for=tract:*&',
                      'in=state:',substr(county_fips,1,2),
