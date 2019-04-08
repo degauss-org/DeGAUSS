@@ -2,7 +2,7 @@
 
 **De**centralized **G**eomarker **A**ssessment for M**u**lti-**S**ite **S**tudies  
 
-[![Build Status](https://travis-ci.org/cole-brokamp/DeGAUSS.svg?branch=v0.3)](https://travis-ci.org/cole-brokamp/DeGAUSS)
+[![Build Status](https://travis-ci.org/cole-brokamp/DeGAUSS.svg?branch=v0.5)](https://travis-ci.org/cole-brokamp/DeGAUSS)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 [![status](http://joss.theoj.org/papers/51cadcd9bce9b42b6164e71cf708eb81/status.svg)](http://joss.theoj.org/papers/51cadcd9bce9b42b6164e71cf708eb81)
 [![DOI](https://zenodo.org/badge/79760093.svg)](https://zenodo.org/badge/latestdoi/79760093)

@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+#!/usr/local/bin/Rscript
 
 setwd('/tmp')
 
@@ -7,6 +7,7 @@ p <- arg_parser('return distance to nearest major roadway for geocoded CSV file'
 p <- add_argument(p,'file_name',help='name of geocoded csv file')
 args <- parse_args(p)
 
+suppressPackageStartupMessages(library(sf))
 suppressPackageStartupMessages(library(tigris))
 suppressPackageStartupMessages(library(rgdal))
 suppressPackageStartupMessages(library(dplyr))
